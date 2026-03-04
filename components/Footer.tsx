@@ -61,28 +61,19 @@ export default function Footer() {
               gap: "10px",
             }}
           >
-            <Link href="/" style={{ color: "white", textDecoration: "none" }}>
+            <Link href="/" style={{ color: "white" }}>
               Home
             </Link>
 
-            <Link
-              href="/events"
-              style={{ color: "white", textDecoration: "none" }}
-            >
+            <Link href="/events" style={{ color: "white" }}>
               Events
             </Link>
 
-            <Link
-              href="/#register"
-              style={{ color: "white", textDecoration: "none" }}
-            >
+            <Link href="/#register" style={{ color: "white" }}>
               Register
             </Link>
 
-            <Link
-              href="/#contact"
-              style={{ color: "white", textDecoration: "none" }}
-            >
+            <Link href="/#contact" style={{ color: "white" }}>
               Contact
             </Link>
           </div>
@@ -103,7 +94,6 @@ export default function Footer() {
             href="mailto:official.upanz@gmail.com"
             style={{
               color: "white",
-              textDecoration: "none",
             }}
           >
             official.upanz@gmail.com
@@ -123,6 +113,30 @@ export default function Footer() {
       >
         © {new Date().getFullYear()} Uttar Pradesh Association in New Zealand.
         All rights reserved.
+      </div>
+
+      {/* POWERED BY */}
+      <div
+        style={{
+          marginTop: "10px",
+          textAlign: "center",
+          fontSize: "13px",
+          opacity: 0.7,
+          fontFamily: "var(--font-body)",
+        }}
+      >
+        Powered by{" "}
+        <a
+          href="https://webfitt.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: "#F7941D",
+            fontWeight: 600,
+          }}
+        >
+          Webfitt.com
+        </a>
       </div>
     </footer>
   );
