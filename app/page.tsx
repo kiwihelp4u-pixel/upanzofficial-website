@@ -23,7 +23,6 @@ export default function Home() {
           overflow: "hidden"
         }}
       >
-        {/* Background Image */}
         <Image
           src="/images/taj.jpg"
           alt="Taj Mahal"
@@ -32,7 +31,6 @@ export default function Home() {
           style={{ objectFit: "cover", zIndex: -2 }}
         />
 
-        {/* Gradient Overlay */}
         <div
           style={{
             position: "absolute",
@@ -44,8 +42,6 @@ export default function Home() {
         />
 
         <div style={{ maxWidth: "900px" }}>
-          
-          {/* CIRCULAR LOGO */}
           <div
             style={{
               marginBottom: "40px",
@@ -71,7 +67,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* MAIN HEADING */}
           <h1
             style={{
               fontFamily: "var(--font-heading)",
@@ -86,19 +81,16 @@ export default function Home() {
             Community Across New Zealand
           </h1>
 
-          {/* SUBTEXT */}
           <p
             style={{
               fontSize: "clamp(16px, 2vw, 20px)",
               opacity: 0.9,
-              marginBottom: "50px",
-              fontFamily: "var(--font-body)"
+              marginBottom: "50px"
             }}
           >
             Rooted in culture. United in New Zealand.
           </p>
 
-          {/* BUTTONS */}
           <div
             style={{
               display: "flex",
@@ -107,7 +99,7 @@ export default function Home() {
               gap: "20px"
             }}
           >
-            <Link href="/#join">
+            <Link href="/register">
               <button
                 style={{
                   background: "#F7941D",
@@ -162,8 +154,7 @@ export default function Home() {
             style={{
               fontSize: "42px",
               marginTop: "10px",
-              color: "#1E1B75",
-              fontFamily: "var(--font-heading)"
+              color: "#1E1B75"
             }}
           >
             About UPANZ
@@ -177,11 +168,11 @@ export default function Home() {
               color: "#333"
             }}
           >
-            The <strong>Uttar Pradesh Association in New Zealand (UPANZ)</strong> is a
-            non-profit community organisation established in <strong>2017</strong>.
-            We celebrate our rich cultural heritage, foster social connections,
-            and support members across New Zealand while building bridges
-            between Indian and Kiwi cultures.
+            The <strong>Uttar Pradesh Association in New Zealand (UPANZ)</strong>{" "}
+            is a non-profit community organisation established in{" "}
+            <strong>2017</strong>. We celebrate our rich cultural heritage,
+            foster social connections, and support members across New Zealand
+            while building bridges between Indian and Kiwi cultures.
           </p>
         </div>
       </section>
@@ -202,8 +193,7 @@ export default function Home() {
           style={{
             fontSize: "42px",
             marginTop: "10px",
-            color: "#1E1B75",
-            fontFamily: "var(--font-heading)"
+            color: "#1E1B75"
           }}
         >
           What We Do
@@ -221,15 +211,15 @@ export default function Home() {
           {[
             {
               title: "Cultural & Festive Events",
-              text: "Celebrating Holi, Diwali, and traditional festivals while preserving our heritage."
+              text: "Celebrating Holi, Diwali, and traditional festivals."
             },
             {
               title: "Community Support & Networking",
-              text: "Supporting newcomers and strengthening community connections across NZ."
+              text: "Helping newcomers and strengthening community bonds."
             },
             {
               title: "Youth & Family Engagement",
-              text: "Encouraging youth participation and embracing both Indian and Kiwi identity."
+              text: "Encouraging youth participation and heritage."
             }
           ].map((card, index) => (
             <div
@@ -245,11 +235,128 @@ export default function Home() {
               <h3 style={{ marginBottom: "15px", color: "#1E1B75" }}>
                 {card.title}
               </h3>
-              <p style={{ color: "#555", lineHeight: "1.6" }}>
-                {card.text}
-              </p>
+              <p style={{ color: "#555", lineHeight: "1.6" }}>{card.text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* COMMUNITY IMPACT */}
+      <section
+        style={{
+          padding: "80px 20px",
+          background: "#1E1B75",
+          color: "white",
+          textAlign: "center"
+        }}
+      >
+        <h2 style={{ fontSize: "40px", marginBottom: "50px" }}>
+          Our Community Impact
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: "60px"
+          }}
+        >
+          {[
+            { number: "1200+", label: "Members" },
+            { number: "6", label: "Cities in New Zealand" },
+            { number: "30+", label: "Community Events" },
+            { number: "2017", label: "Established" }
+          ].map((item, index) => (
+            <div key={index}>
+              <h3 style={{ fontSize: "42px", color: "#F7941D" }}>
+                {item.number}
+              </h3>
+              <p style={{ fontSize: "18px" }}>{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* JOIN COMMUNITY */}
+      <section
+        style={{
+          padding: "100px 20px",
+          background: "#F7F4EE",
+          textAlign: "center"
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "42px",
+            color: "#1E1B75"
+          }}
+        >
+          Join the UPANZ Community
+        </h2>
+
+        <p
+          style={{
+            marginTop: "20px",
+            fontSize: "18px",
+            color: "#555",
+            maxWidth: "700px",
+            marginInline: "auto"
+          }}
+        >
+          Be part of a growing community celebrating heritage, culture and
+          connection across New Zealand.
+        </p>
+
+        <div
+          style={{
+            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            gap: "20px",
+            flexWrap: "wrap"
+          }}
+        >
+          <Link href="/register">
+            <button
+              style={{
+                background: "#F7941D",
+                border: "none",
+                padding: "16px 34px",
+                borderRadius: "999px",
+                color: "white",
+                fontSize: "16px",
+                fontWeight: 600,
+                cursor: "pointer"
+              }}
+            >
+              Register as Member
+            </button>
+          </Link>
+
+          <button
+            style={{
+              background: "#2E7D32",
+              border: "none",
+              padding: "16px 34px",
+              borderRadius: "999px",
+              color: "white"
+            }}
+          >
+            Volunteer
+          </button>
+
+          <button
+            style={{
+              background: "#1E1B75",
+              border: "none",
+              padding: "16px 34px",
+              borderRadius: "999px",
+              color: "white"
+            }}
+          >
+            Sponsor
+          </button>
         </div>
       </section>
 
@@ -262,13 +369,7 @@ export default function Home() {
           textAlign: "center"
         }}
       >
-        <h2
-          style={{
-            color: "#1E1B75",
-            fontSize: "32px",
-            fontFamily: "var(--font-heading)"
-          }}
-        >
+        <h2 style={{ color: "#1E1B75", fontSize: "32px" }}>
           Contact UPANZ
         </h2>
 
