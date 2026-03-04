@@ -1,12 +1,78 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const monuments = [
+    "/images/taj.jpg",
+    "/images/kashi.jpg",
+    "/images/ram-mandir.jpg",
+    "/images/bara-imambara.jpg",
+    "/images/varanasi-ghat.jpg"
+  ];
+
+  const [slide, setSlide] = useState(0);
+
+  // Monument slideshow rotation
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlide((prev) => (prev + 1) % monuments.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // Flower sprinkle effect (runs once)
+  useEffect(() => {
+    const container = document.getElementById("petal-container");
+    if (!container) return;
+
+    const petalsCount = 22;
+
+    for (let i = 0; i < petalsCount; i++) {
+      const petal = document.createElement("div");
+
+      petal.style.position = "fixed";
+      petal.style.top = "-20px";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.width = "10px";
+      petal.style.height = "10px";
+      petal.style.background = "#F7941D";
+      petal.style.borderRadius = "50%";
+      petal.style.opacity = "0.8";
+      petal.style.zIndex = "9999";
+      petal.style.pointerEvents = "none";
+
+      petal.animate(
+        [
+          { transform: "translateY(0px) rotate(0deg)" },
+          { transform: "translateY(105vh) rotate(360deg)" }
+        ],
+        {
+          duration: 3500 + Math.random() * 2500,
+          iterations: 1,
+          easing: "linear"
+        }
+      );
+
+      container.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 6500);
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
+
+      {/* Flower sprinkle overlay container */}
+      <div id="petal-container" />
 
       {/* HERO */}
       <section
@@ -133,6 +199,79 @@ export default function Home() {
               </button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* UP MONUMENTS SLIDESHOW (NEW) */}
+      <section
+        style={{
+          padding: "90px 20px",
+          textAlign: "center",
+          background: "#FFFFFF"
+        }}
+      >
+        <p style={{ color: "#F7941D", fontWeight: 600, fontSize: "14px" }}>
+          OUR HERITAGE
+        </p>
+
+        <h2
+          style={{
+            fontSize: "42px",
+            marginTop: "10px",
+            color: "#1E1B75",
+            fontFamily: "var(--font-heading)"
+          }}
+        >
+          Icons of Uttar Pradesh
+        </h2>
+
+        <p
+          style={{
+            marginTop: "20px",
+            fontSize: "18px",
+            lineHeight: "1.8",
+            color: "#333",
+            maxWidth: "900px",
+            marginInline: "auto"
+          }}
+        >
+          A glimpse of the places that shaped our roots, from timeless monuments
+          to the living ghats of the Ganga.
+        </p>
+
+        <div
+          style={{
+            marginTop: "45px",
+            maxWidth: "1000px",
+            marginInline: "auto",
+            borderRadius: "16px",
+            overflow: "hidden",
+            boxShadow: "0 12px 40px rgba(0,0,0,0.15)"
+          }}
+        >
+          <Image
+            src={monuments[slide]}
+            alt="Uttar Pradesh Monument"
+            width={1200}
+            height={650}
+            style={{ width: "100%", height: "auto" }}
+            priority={false}
+          />
+        </div>
+
+        <div style={{ marginTop: "18px", display: "flex", gap: "8px", justifyContent: "center" }}>
+          {monuments.map((_, i) => (
+            <span
+              key={i}
+              style={{
+                width: "10px",
+                height: "10px",
+                borderRadius: "50%",
+                background: i === slide ? "#F7941D" : "#D9D9D9",
+                display: "inline-block"
+              }}
+            />
+          ))}
         </div>
       </section>
 
