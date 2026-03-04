@@ -173,3 +173,79 @@ h3 {
   font-family: var(--font-heading);
   font-weight: 600;
 }
+
+/* ============================= */
+/* FLOWER PETAL ANIMATION */
+/* ============================= */
+
+#petal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#petal-container img {
+  position: fixed;
+  top: -40px;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(540deg);
+  }
+}
+
+/* ============================= */
+/* MONUMENT SLIDESHOW */
+/* ============================= */
+
+.monument-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.monument-section h2 {
+  font-size: 38px;
+  color: #1e1b75;
+  margin-bottom: 30px;
+}
+
+.monument-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.monument-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================= */
+/* BUTTON HOVER IMPROVEMENTS */
+/* ============================= */
+
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
