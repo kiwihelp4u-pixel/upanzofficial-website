@@ -19,9 +19,11 @@ export default function Home() {
           justifyContent: "center",
           textAlign: "center",
           color: "white",
-          padding: "100px 20px 40px 20px"
+          padding: "140px 20px 60px 20px",
+          overflow: "hidden"
         }}
       >
+        {/* Background Image */}
         <Image
           src="/images/taj.jpg"
           alt="Taj Mahal"
@@ -30,6 +32,7 @@ export default function Home() {
           style={{ objectFit: "cover", zIndex: -2 }}
         />
 
+        {/* Gradient Overlay */}
         <div
           style={{
             position: "absolute",
@@ -41,31 +44,67 @@ export default function Home() {
         />
 
         <div style={{ maxWidth: "900px" }}>
-          <h1
+          
+          {/* CIRCULAR LOGO */}
+          <div
             style={{
-              fontSize: "clamp(28px, 5vw, 60px)",
-              lineHeight: "1.2"
+              marginBottom: "40px",
+              display: "flex",
+              justifyContent: "center"
             }}
           >
-            Connecting the Uttar Pradesh Community Across New Zealand
+            <div
+              style={{
+                width: "120px",
+                height: "120px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                boxShadow: "0 10px 40px rgba(0,0,0,0.3)"
+              }}
+            >
+              <Image
+                src="/images/upanz-logo.png"
+                alt="UPANZ Logo"
+                width={120}
+                height={120}
+              />
+            </div>
+          </div>
+
+          {/* MAIN HEADING */}
+          <h1
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontSize: "clamp(32px, 5vw, 64px)",
+              lineHeight: "1.15",
+              fontWeight: 700,
+              marginBottom: "25px"
+            }}
+          >
+            Connecting the Uttar Pradesh
+            <br />
+            Community Across New Zealand
           </h1>
 
+          {/* SUBTEXT */}
           <p
             style={{
-              marginTop: "20px",
-              fontSize: "clamp(16px, 2.5vw, 20px)"
+              fontSize: "clamp(16px, 2vw, 20px)",
+              opacity: 0.9,
+              marginBottom: "50px",
+              fontFamily: "var(--font-body)"
             }}
           >
             Rooted in culture. United in New Zealand.
           </p>
 
+          {/* BUTTONS */}
           <div
             style={{
-              marginTop: "40px",
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
-              gap: "15px"
+              gap: "20px"
             }}
           >
             <Link href="/#join">
@@ -73,10 +112,11 @@ export default function Home() {
                 style={{
                   background: "#F7941D",
                   border: "none",
-                  padding: "14px 30px",
-                  borderRadius: "30px",
+                  padding: "16px 36px",
+                  borderRadius: "999px",
                   color: "white",
                   fontSize: "16px",
+                  fontWeight: 600,
                   cursor: "pointer"
                 }}
               >
@@ -89,10 +129,11 @@ export default function Home() {
                 style={{
                   background: "transparent",
                   border: "2px solid white",
-                  padding: "14px 30px",
-                  borderRadius: "30px",
+                  padding: "16px 36px",
+                  borderRadius: "999px",
                   color: "white",
                   fontSize: "16px",
+                  fontWeight: 600,
                   cursor: "pointer"
                 }}
               >
@@ -122,7 +163,7 @@ export default function Home() {
               fontSize: "42px",
               marginTop: "10px",
               color: "#1E1B75",
-              fontFamily: "serif"
+              fontFamily: "var(--font-heading)"
             }}
           >
             About UPANZ
@@ -162,7 +203,7 @@ export default function Home() {
             fontSize: "42px",
             marginTop: "10px",
             color: "#1E1B75",
-            fontFamily: "serif"
+            fontFamily: "var(--font-heading)"
           }}
         >
           What We Do
@@ -212,7 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT SECTION (for navbar anchor) */}
+      {/* CONTACT */}
       <section
         id="contact"
         style={{
@@ -221,7 +262,13 @@ export default function Home() {
           textAlign: "center"
         }}
       >
-        <h2 style={{ color: "#1E1B75", fontSize: "32px" }}>
+        <h2
+          style={{
+            color: "#1E1B75",
+            fontSize: "32px",
+            fontFamily: "var(--font-heading)"
+          }}
+        >
           Contact UPANZ
         </h2>
 

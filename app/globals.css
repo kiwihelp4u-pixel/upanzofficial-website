@@ -1,13 +1,15 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Georgia', serif;
-  background-color: #F4EFE7;
-  color: #333;
+  margin: 0;
+  font-family: var(--font-body);
+  background: white;
 }
 
 a {
@@ -15,12 +17,159 @@ a {
   color: inherit;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+
+.nav {
+  background: #1e2a78;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.section {
-  padding: 80px 0;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* BRAND */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* DESKTOP MENU */
+
+.desktop-menu {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.desktop-menu a {
+  color: white;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  transition: opacity 0.2s ease;
+}
+
+.desktop-menu a:hover {
+  opacity: 0.8;
+}
+
+/* JOIN BUTTON */
+
+.join-btn {
+  background: #f7941d;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* HAMBURGER */
+
+.mobile-menu-icon {
+  display: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: #1e2a78;
+}
+
+.mobile-menu a {
+  color: white;
+  font-weight: 600;
+  font-family: var(--font-heading);
+}
+
+.mobile-join {
+  background: #f7941d;
+  padding: 12px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+/* BREAKPOINT */
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+#home h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+#home p {
+  font-family: var(--font-body);
+}
+
+/* ============================= */
+/* SECTION HEADINGS */
+/* ============================= */
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
 }
