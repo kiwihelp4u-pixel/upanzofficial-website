@@ -25,6 +25,7 @@ export default function Navbar() {
         <nav className="desktop-menu">
           <Link href="/">Home</Link>
           <Link href="/#about">About</Link>
+          <Link href="/team">Team</Link>
           <Link href="/events">Events</Link>
           <Link href="/#contact">Contact</Link>
           <Link href="/#register" className="join-btn">
@@ -44,6 +45,7 @@ export default function Navbar() {
         <div className="mobile-menu">
           <Link href="/">Home</Link>
           <Link href="/#about">About</Link>
+          <Link href="/team">Team</Link>
           <Link href="/events">Events</Link>
           <Link href="/#contact">Contact</Link>
           <Link href="/#register" className="mobile-join">
